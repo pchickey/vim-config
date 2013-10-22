@@ -1,6 +1,6 @@
 set nocompatible
 
-let mapleader      = ","
+let mapleader      = ";"
 let maplocalleader = ";"
 
 " OS Detection
@@ -32,7 +32,7 @@ let g:quicktask_snip_path = $VIMHOME . '/snips/'
 let g:quicktask_snip_default_filetype = 'markdown'
 
 Bundle 'tpope/vim-fugitive'
-Bundle 'jcf/vim-latex'
+"Bundle 'jcf/vim-latex'
 Bundle 'ciaranm/inkpot'
 
 " Haskell Indenting
@@ -59,6 +59,8 @@ endif
 " Coq interaction
 Bundle 'def-lkb/vimbufsync'
 Bundle 'trefis/coquille'
+" Ack plugin
+Bundle 'mileszs/ack.vim'
 
 " Enable filetype detection
 filetype plugin indent on
@@ -134,10 +136,10 @@ colors default
 set bg=dark
 
 " Disable the arrow keys when in edit mode
-inoremap <Up>    <NOP>
-inoremap <Right> <NOP>
-inoremap <Down>  <NOP>
-inoremap <Left>  <NOP>
+" inoremap <Up>    <NOP>
+" inoremap <Right> <NOP>
+" inoremap <Down>  <NOP>
+" inoremap <Left>  <NOP>
 
 inoremap jk <Esc>
 
@@ -158,3 +160,4 @@ vnoremap <Leader>s :sort<Cr>
 " Case altering
 nnoremap <Leader>U vawgU
 nnoremap <Leader>u vawgu
+

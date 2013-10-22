@@ -23,5 +23,5 @@ nnoremap <buffer> <localleader>#i O{-# INLINE #-}<Esc>hhhi
 nnoremap <buffer> <localleader>i Oimport 
 
 " Set the tab size
-setlocal tabstop=8
+setlocal tabstop=2
 setlocal shiftwidth=2
