@@ -1,10 +1,10 @@
 #!/bin/zsh
 
-if [[ ! -d bundle/vundle ]]; then
-	git clone https://github.com/gmarik/vundle.git bundle/vundle
+if [[ ! -d bundle/Vundle.vim ]]; then
+	git clone https://github.com/gmarik/vundle.git bundle/Vundle.vim
 else
-	cd bundle/vundle
+	cd bundle/Vundle.vim
 	git pull
 fi
 
-vim +BundleInstall +qa
+vim +PluginInstall +qall

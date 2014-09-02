@@ -6,61 +6,63 @@ let maplocalleader = ";"
 " OS Detection
 if has('win32') || has('win64')
 let $OS = 'windows'
-let $VIMHOME = $HOME. '/vimfiles'
+let $VIMHOME = $HOME. '/vim-config'
 else
 let $OS = 'linux'
-let $VIMHOME = $HOME . '/.vim'
+let $VIMHOME = $HOME . '/.vim-config'
 endif
 
 " Setup bundles
 filetype off
 
-set rtp+=$VIMHOME/bundle/vundle/
-call vundle#rc($VIMHOME . '/bundle')
+set rtp+=$VIMHOME/bundle/Vundle.vim
+call vundle#begin($VIMHOME . '/bundle')
 
 " Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " External packages
-Bundle 'tpope/vim-markdown'
-Bundle 'IndentAnything'
-Bundle 'OOP-javascript-indentation'
+Plugin 'tpope/vim-markdown'
+Plugin 'IndentAnything'
+Plugin 'OOP-javascript-indentation'
 
 " Quick Task
-Bundle 'aaronbieber/quicktask'
+Plugin 'aaronbieber/quicktask'
 let g:quicktask_snip_path = $VIMHOME . '/snips/'
 let g:quicktask_snip_default_filetype = 'markdown'
 
-Bundle 'tpope/vim-fugitive'
-"Bundle 'jcf/vim-latex'
-Bundle 'ciaranm/inkpot'
+Plugin 'tpope/vim-fugitive'
+"Plugin 'jcf/vim-latex'
+Plugin 'ciaranm/inkpot'
 
 " Haskell Indenting
-Bundle 'elliottt/haskell-indent'
+Plugin 'elliottt/haskell-indent'
 
 " NERDTree config
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 if $OS != 'windows'
     let NERDTreeQuitOnOpen = 1
 endif
 
 " lightline.vim config
-Bundle 'itchyny/lightline.vim'
+Plugin 'itchyny/lightline.vim'
 set laststatus=2
 let g:lightline = {
       \ 'component': {
       \   'readonly': '%{&readonly?"⭤":""}'
       \ } }
 if $OS != 'windows'
-    let g:lightline['separator']    =  { 'left': '⮀', 'right': '⮂' }
-    let g:lightline['subseparator'] =  { 'left': '⮁', 'right': '⮃' }
+"    let g:lightline['separator']    =  { 'left': '⮀', 'right': '⮂' }
+"    let g:lightline['subseparator'] =  { 'left': '⮁', 'right': '⮃' }
 endif
 
 " Coq interaction
-Bundle 'def-lkb/vimbufsync'
-Bundle 'trefis/coquille'
+Plugin 'def-lkb/vimbufsync'
+Plugin 'trefis/coquille'
 " Ack plugin
-Bundle 'mileszs/ack.vim'
+Plugin 'mileszs/ack.vim'
+
+call vundle#end()
 
 " Enable filetype detection
 filetype plugin indent on
