@@ -23,8 +23,6 @@ Plugin 'gmarik/vundle'
 
 " External packages
 Plugin 'tpope/vim-markdown'
-Plugin 'IndentAnything'
-Plugin 'OOP-javascript-indentation'
 
 " Quick Task
 Plugin 'aaronbieber/quicktask'
@@ -32,7 +30,6 @@ let g:quicktask_snip_path = $VIMHOME . '/snips/'
 let g:quicktask_snip_default_filetype = 'markdown'
 
 Plugin 'tpope/vim-fugitive'
-"Plugin 'jcf/vim-latex'
 Plugin 'ciaranm/inkpot'
 
 " Haskell Indenting
