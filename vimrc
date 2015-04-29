@@ -6,10 +6,10 @@ let maplocalleader = ";"
 " OS Detection
 if has('win32') || has('win64')
 let $OS = 'windows'
-let $VIMHOME = $HOME. '/vim-config'
+let $VIMHOME = $HOME. '/vim'
 else
 let $OS = 'linux'
-let $VIMHOME = $HOME . '/.vim-config'
+let $VIMHOME = $HOME . '/.vim'
 endif
 
 " Setup bundles
@@ -61,6 +61,10 @@ Plugin 'def-lkb/vimbufsync'
 Plugin 'trefis/coquille'
 " Ack plugin
 Plugin 'mileszs/ack.vim'
+
+Plugin 'idris-hackers/idris-vim'
+
+Plugin 'wting/rust.vim'
 
 call vundle#end()
 
