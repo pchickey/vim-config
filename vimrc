@@ -62,6 +62,8 @@ Plugin 'mileszs/ack.vim'
 Plugin 'idris-hackers/idris-vim'
 
 Plugin 'wting/rust.vim'
+Plugin 'cauterize-tools/vim-cauterize'
+Plugin 'pchickey/vim-gidl'
 
 call vundle#end()
 
