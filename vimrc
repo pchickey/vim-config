@@ -64,6 +64,7 @@ Plugin 'idris-hackers/idris-vim'
 Plugin 'wting/rust.vim'
 Plugin 'cauterize-tools/vim-cauterize'
 Plugin 'pchickey/vim-gidl'
+Plugin 'fidian/hexmode'
 
 call vundle#end()
 
