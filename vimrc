@@ -37,6 +37,7 @@ Plugin 'elliottt/haskell-indent'
 
 " NERDTree config
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 if $OS != 'windows'
     let NERDTreeQuitOnOpen = 1
 endif
@@ -66,12 +67,30 @@ Plugin 'cauterize-tools/vim-cauterize'
 Plugin 'pchickey/vim-gidl'
 Plugin 'fidian/hexmode'
 
+Plugin 'eagletmt/ghcmod-vim'
+Plugin 'eagletmt/neco-ghc'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'godlygeek/tabular'
+Plugin 'ervandew/supertab'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/vimproc.vim'
+
 call vundle#end()
 
 " Enable filetype detection
 filetype plugin indent on
 
-set ignorecase smartcase
+" got these from the stephen deil article. not sure about them all
+set smartcase
+set smarttab
+set smartindent
+set autoindent
+set mouse=a
+set history=1000
+set completeopt=menuone,menu,longest
 
 " Allow backspacing over everything
 set backspace=indent,eol,start
@@ -136,6 +155,7 @@ set printoptions=paper:letter
 set wildmode=longest:full,list:full
 set wildmenu
 set wildignore=*.o,*.hi,*.swp,*.bc
+set wildignore+=*\\tmp\\*,*.swo*,*.zip,.git,.cabal-sandbox,.stack-work
 
 " Colors!
 colors default
@@ -166,4 +186,16 @@ vnoremap <Leader>s :sort<Cr>
 " Case altering
 nnoremap <Leader>U vawgU
 nnoremap <Leader>u vawgu
+
+" supertab
+let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
+
+if has("gui_running")
+  imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
+else " no gui
+  if has("unix")
+    inoremap <Nul> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
+  endif
+endif
+
 
