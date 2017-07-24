@@ -57,12 +57,10 @@ endif
 " Coq interaction
 Plugin 'def-lkb/vimbufsync'
 Plugin 'trefis/coquille'
-" Ack plugin
-Plugin 'mileszs/ack.vim'
 
 Plugin 'idris-hackers/idris-vim'
 
-Plugin 'wting/rust.vim'
+Plugin 'rust-lang/rust.vim'
 Plugin 'cauterize-tools/vim-cauterize'
 Plugin 'pchickey/vim-gidl'
 Plugin 'fidian/hexmode'
@@ -77,6 +75,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'ervandew/supertab'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/vimproc.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'jremmen/vim-ripgrep'
 
 call vundle#end()
 
@@ -129,12 +129,6 @@ if has("spell")
     set nospell
 endif
 
-" Highlight lines longer than 80 chars
-let w:m80=matchadd('ErrorMsg', '\%>80v.\+', -1)
-
-" Wrap the line at 80 characters
-set textwidth=80
-
 " Highlight trailing space, and tab characters, toggle with <leader>-s
 set list lcs=tab:>-,trail:.
 nnoremap <leader>s :set nolist!<CR>
@@ -156,6 +150,9 @@ set wildmode=longest:full,list:full
 set wildmenu
 set wildignore=*.o,*.hi,*.swp,*.bc
 set wildignore+=*\\tmp\\*,*.swo*,*.zip,.git,.cabal-sandbox,.stack-work
+
+set hidden
+let g:racer_cmd = "/Users/pat/.cargo/bin/racer"
 
 " Colors!
 colors default
@@ -198,4 +195,8 @@ else " no gui
   endif
 endif
 
+let g:rustfmt_autosave = 1
+let g:ycm_auto_trigger = 0
+nnoremap <Leader>a :let g:ycm_auto_trigger=1<Cr>
+nnoremap <Leader>A :let g:ycm_auto_trigger=0<Cr>
 
