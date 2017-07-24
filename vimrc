@@ -196,7 +196,9 @@ else " no gui
 endif
 
 let g:rustfmt_autosave = 1
-let g:ycm_auto_trigger = 0
+
+let g:ycm_path_to_python_interpreter="/usr/bin/python"
+let g:ycm_auto_trigger=0
 nnoremap <Leader>a :let g:ycm_auto_trigger=1<Cr>
 nnoremap <Leader>A :let g:ycm_auto_trigger=0<Cr>
 
