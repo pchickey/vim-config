@@ -92,6 +92,7 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'jremmen/vim-ripgrep'
+Plugin 'rhysd/vim-wasm'
 
 call vundle#end()
 
