@@ -30,6 +30,7 @@ let g:quicktask_snip_path = $VIMHOME . '/snips/'
 let g:quicktask_snip_default_filetype = 'markdown'
 
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
 Plugin 'ciaranm/inkpot'
 
 " Haskell Indenting
