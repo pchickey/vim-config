@@ -53,16 +53,10 @@ let g:lightline = {
       \ },
       \ 'active': {
       \   'left': [ ['mode', 'paste'],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified', 'syntastic' ] ]
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
       \   'fugitive': 'LightLineFugitive',
-      \ },
-      \ 'component_expand': {
-      \   'syntastic': 'SyntasticStatuslineFlag',
-      \ },
-      \ 'component_type': {
-      \   'syntastic': 'error',
       \ },
       \ }
 function! LightLineFugitive()
@@ -83,7 +77,6 @@ Plugin 'fidian/hexmode'
 Plugin 'eagletmt/ghcmod-vim'
 Plugin 'eagletmt/neco-ghc'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'godlygeek/tabular'
@@ -182,22 +175,11 @@ set bg=dark
 
 inoremap jk <Esc>
 
-let g:syntastic_rust_rustc_exe = 'cargo check'
-let g:syntastic_rust_rustc_fname = ''
-let g:syntastic_rust_rustc_args = '--'
-let g:syntastic_rust_checkers = ['rustc']
-
-let g:syntastic_rust_checkers = ['rustc']
-let g:syntastic_check_on_open = 0
-
 " Set F2 as the binding to toggle the paste mode
 set pastetoggle=<F2>
 
 " Use F3 to toggle spelling
 nnoremap <F3> :set spell!<CR>
-
-" Use F4 to syntax check
-nnoremap <F4> :SyntasticCheck<CR>
 
 " Disable the bell
 set noerrorbells
@@ -222,7 +204,7 @@ else " no gui
   endif
 endif
 
-let g:rustfmt_autosave = 1
+let g:rustfmt_autosave = 0
 
 let g:ycm_path_to_python_interpreter="/usr/bin/python"
 let g:ycm_auto_trigger=0
