@@ -19,10 +19,10 @@ nnoremap <buffer> --l ^i/* <Esc>76a*<Esc>A/<Esc>F lR
 nnoremap <localleader>i O#include <><Esc>i
 nnoremap <localleader>I O#include ""<Esc>i
 
-let g:ycm_auto_trigger = 1
-let g:ycm_global_ycm_extra_conf = '~/.vim/after/syntax/ycm_extra_conf_c.py'
+let g:ycm_auto_trigger = 0
+"let g:ycm_global_ycm_extra_conf = '~/.vim/after/syntax/ycm_extra_conf_c.py'
 
-nnoremap <Leader>] :YcmCompleter GoTo<CR>
-nnoremap <Leader>f :YcmCompleter GoToDefinition<CR>
-nnoremap <Leader>l :YcmCompleter GoToDeclaration<CR>
-nnoremap <Leader>d :YcmCompleter GetDoc<CR>
+"nnoremap <Leader>] :YcmCompleter GoTo<CR>
+"nnoremap <Leader>f :YcmCompleter GoToDefinition<CR>
+"nnoremap <Leader>l :YcmCompleter GoToDeclaration<CR>
+"nnoremap <Leader>d :YcmCompleter GetDoc<CR>
