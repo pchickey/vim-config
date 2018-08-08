@@ -17,7 +17,7 @@ endif
 " Setup bundles
 filetype off
 
-set rtp+=$VIMHOME/bundle/Vundle.vim
+set rtp+=$VIMHOME/bundle/vundle
 call vundle#begin($VIMHOME . '/bundle')
 
 " Vundle
@@ -25,11 +25,6 @@ Plugin 'gmarik/vundle'
 
 " External packages
 Plugin 'tpope/vim-markdown'
-
-" Quick Task
-Plugin 'aaronbieber/quicktask'
-let g:quicktask_snip_path = $VIMHOME . '/snips/'
-let g:quicktask_snip_default_filetype = 'markdown'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
@@ -65,27 +60,12 @@ function! LightLineFugitive()
     return exists('*fugitive#head') ? fugitive#head() : ''
 endfunction
 
-" Coq interaction
-Plugin 'def-lkb/vimbufsync'
-Plugin 'trefis/coquille'
-
-Plugin 'idris-hackers/idris-vim'
-
 Plugin 'rust-lang/rust.vim'
 Plugin 'cauterize-tools/vim-cauterize'
 Plugin 'pchickey/vim-gidl'
 Plugin 'fidian/hexmode'
 
-Plugin 'eagletmt/ghcmod-vim'
-Plugin 'eagletmt/neco-ghc'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tomtom/tlib_vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'godlygeek/tabular'
-Plugin 'ervandew/supertab'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'jremmen/vim-ripgrep'
 Plugin 'rhysd/vim-wasm'
 
@@ -207,9 +187,4 @@ else " no gui
 endif
 
 let g:rustfmt_autosave = 0
-
-let g:ycm_path_to_python_interpreter="/usr/bin/python"
-let g:ycm_auto_trigger=0
-nnoremap <Leader>a :let g:ycm_auto_trigger=1<Cr>
-nnoremap <Leader>A :let g:ycm_auto_trigger=0<Cr>
 

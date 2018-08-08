@@ -10,10 +10,3 @@ fi
 
 vim +PluginInstall +qall
 
-if [[ -d bundle/YouCompleteMe ]]; then
-	cd bundle/YouCompleteMe
-	git submodule update --init --recursive
-	./install.py --clang-completer --racer-completer
-	cd ../..
-fi
-
